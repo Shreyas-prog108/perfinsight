@@ -2,9 +2,13 @@
 /*
 !.gitignore
 !/.dockerignore
+!/.github/
 !/Dockerfile
 !/client/
 !/server/
+
+# GitHub Actions (not under client/server)
+!/.github/**
 
 # Must un-ignore all paths under allowed dirs (see gitignore(5) parent ignore rules).
 !/client/**
