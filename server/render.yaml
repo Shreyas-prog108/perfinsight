@@ -1,12 +1,4 @@
-# Render Blueprint — monorepo API + static SPA
-# Dashboard: Blueprint file path must be server/render.yaml (connect Git repo at monorepo root).
-# Docs: https://render.com/docs/infrastructure-as-code
-#
-# API Docker: Dockerfile at repo ROOT + dockerContext . copies server/*. (fixes "Dockerfile not found").
-#
-# Secrets (Dashboard, sync:false): API — MONGODB_URI, JWT_SECRET, OPENAI_API_KEY
-# Static build — VITE_API_URL = API origin HTTPS only (no /api suffix), e.g. https://perfinsight-api.onrender.com
-# Deploy API first, paste URL into perfinsight-web env, redeploy frontend.
+# One Web Service — Docker builds client + API (see repo-root Dockerfile).
 
 services:
   - type: web
@@ -26,15 +18,4 @@ services:
       - key: JWT_SECRET
         sync: false
       - key: OPENAI_API_KEY
-        sync: false
-
-  - type: web
-    name: perfinsight-web
-    runtime: static
-    plan: free
-    rootDir: client
-    buildCommand: npm install && npm run build
-    staticPublishPath: ./dist
-    envVars:
-      - key: VITE_API_URL
         sync: false

@@ -3,6 +3,5 @@
 **/dist
 **/dist-ssr
 **/.vite
-client
 *.pdf
 docs
