@@ -1051,16 +1051,82 @@ select option {
   accent-color: var(--accent);
 }
 
-.ai-output .markdown-pre {
-  white-space: pre-wrap;
+.ai-output .ai-markdown {
   background: rgb(8 10 12 / 0.65);
   color: rgb(239 239 239);
-  padding: 1.25rem;
+  padding: 1.25rem 1.35rem;
   border-radius: var(--radius-md);
   font-size: 0.9175rem;
+  line-height: 1.6;
   max-height: 520px;
   overflow: auto;
   border: 1px solid rgb(255 255 255 / 0.06);
+}
+
+.ai-output .ai-markdown :first-child {
+  margin-top: 0;
+}
+
+.ai-output .ai-markdown :last-child {
+  margin-bottom: 0;
+}
+
+.ai-output .ai-markdown h1,
+.ai-output .ai-markdown h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin: 1.25rem 0 0.6rem;
+  letter-spacing: -0.02em;
+}
+
+.ai-output .ai-markdown h1:first-child,
+.ai-output .ai-markdown h2:first-child {
+  margin-top: 0;
+}
+
+.ai-output .ai-markdown h3 {
+  font-size: 1.02rem;
+  margin: 1rem 0 0.4rem;
+  color: rgb(253 246 239 / 0.95);
+}
+
+.ai-output .ai-markdown p {
+  margin: 0.55rem 0;
+  color: rgb(239 239 239 / 0.92);
+}
+
+.ai-output .ai-markdown ul,
+.ai-output .ai-markdown ol {
+  margin: 0.5rem 0 1rem;
+  padding-left: 1.35rem;
+}
+
+.ai-output .ai-markdown li {
+  margin: 0.38rem 0;
+}
+
+.ai-output .ai-markdown li::marker {
+  color: rgb(232 160 92 / 0.75);
+}
+
+.ai-output .ai-markdown strong {
+  color: rgb(255 246 239 / 0.98);
+  font-weight: 600;
+}
+
+.ai-output .ai-markdown hr {
+  border: none;
+  border-top: 1px solid var(--border-soft);
+  margin: 1.15rem 0;
+}
+
+.ai-output .ai-markdown blockquote {
+  margin: 0.75rem 0;
+  padding: 0.5rem 0 0.5rem 0.85rem;
+  border-left: 3px solid rgb(232 160 92 / 0.35);
+  color: var(--text-muted);
 }
 
 @media (max-width: 760px) {

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
 import api from "../services/api.js";
 
 export default function AIPage() {
@@ -118,7 +119,9 @@ export default function AIPage() {
       {markdown && (
         <div className="card ai-output">
           <h3 className="tight-title">AI output</h3>
-          <pre className="markdown-pre">{markdown}</pre>
+          <div className="ai-markdown">
+            <ReactMarkdown>{markdown}</ReactMarkdown>
+          </div>
         </div>
       )}
     </div>
