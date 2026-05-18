@@ -1,6 +1,8 @@
-# Whitelist only app folders committed: client/, server/, and this rule file.
+# Whitelist only app folders committed: client/, server/, and deploy glue at repo root.
 /*
 !.gitignore
+!/.dockerignore
+!/Dockerfile
 !/client/
 !/server/
 

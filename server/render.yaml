@@ -2,8 +2,7 @@
 # Dashboard: Blueprint file path must be server/render.yaml (connect Git repo at monorepo root).
 # Docs: https://render.com/docs/infrastructure-as-code
 #
-# API Docker build: rootDir MUST be server so Dockerfile Path ./Dockerfile resolves to server/Dockerfile
-# (Otherwise Render defaults to repo-root Dockerfile and the build fails with "Dockerfile not found").
+# API Docker: Dockerfile at repo ROOT + dockerContext . copies server/*. (fixes "Dockerfile not found").
 #
 # Secrets (Dashboard, sync:false): API — MONGODB_URI, JWT_SECRET, OPENAI_API_KEY
 # Static build — VITE_API_URL = API origin HTTPS only (no /api suffix), e.g. https://perfinsight-api.onrender.com
@@ -14,7 +13,6 @@ services:
     name: perfinsight-api
     runtime: docker
     plan: free
-    rootDir: server
     dockerfilePath: ./Dockerfile
     dockerContext: .
     healthCheckPath: /health
