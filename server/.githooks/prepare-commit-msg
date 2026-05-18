@@ -1,0 +1,3 @@
+#!/bin/sh
+# Intentionally empty; keeps prepare-commit-msg from doing extra work before commit-msg edits.
+exit 0

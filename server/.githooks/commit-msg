@@ -1,0 +1,11 @@
+#!/bin/sh
+# Remove Cursor IDE co-authored trailer line if present before commit completes.
+msg="$1"
+[ -z "$msg" ] || [ ! -f "$msg" ] && exit 0
+tmp="$msg.strip.$$"
+grep -Fv "Co-authored-by: Cursor <cursoragent@cursor.com>" "$msg" >"$tmp" || {
+  rm -f "$tmp"
+  exit 0
+}
+mv "$tmp" "$msg"
+exit 0
