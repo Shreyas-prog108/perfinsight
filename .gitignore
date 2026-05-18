@@ -1,0 +1,9 @@
+# Whitelist only app folders committed: client/, server/, and this rule file.
+/*
+!.gitignore
+!/client/
+!/server/
+
+# Must un-ignore all paths under allowed dirs (see gitignore(5) parent ignore rules).
+!/client/**
+!/server/**

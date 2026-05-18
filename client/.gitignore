@@ -1,0 +1,13 @@
+# Client — Vite + React
+node_modules/
+dist/
+dist-ssr/
+.vite/
+
+# Secrets (do not commit)
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log

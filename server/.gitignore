@@ -1,0 +1,34 @@
+# --- Dependencies (must never commit) ---
+# If node_modules ever got tracked: git rm -r --cached client/node_modules server/node_modules && git commit
+node_modules/
+**/node_modules/
+client/node_modules/
+server/node_modules/
+
+# Package manager caches (extra safety)
+**/.pnpm-store/
+
+# Builds & caches
+**/dist
+**/dist-ssr
+client/.vite
+**/.vite
+coverage/
+
+# Environment & secrets (.env.example is NOT ignored — keep template in repo)
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.production.local
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Keys / certs
+*.pem
+*.key
